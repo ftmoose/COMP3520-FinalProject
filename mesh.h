@@ -30,15 +30,40 @@ class Mesh
 {
 public:
 	Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices);
-	Mesh(const std::string& pathName);
+
+
+	// delete copy constructor/assignment operator
+	// Mesh(const Mesh &) = delete;
+  	// Mesh &operator=(const Mesh &) = delete;
+
+
+	/**
+	 * 		MOVE CONSTRUCTOR AND ASSIGNEMNT OPERATOR
+	 * */
+
+	// Mesh(Mesh &&other) : VAO(other.VAO), VBO(other.VBO), drawCount(other.drawCount)
+	// {
+	// 	other.VAO = 0;
+	// }
+
+	// Mesh &operator=(Mesh &&other)
+	// {
+	// 	if(this != &other)
+	// 	{
+	// 		VAO = other.VAO;
+	// 		other.VAO = 0;
+	// 		VBO = other.VBO;
+	// 		drawCount = other.drawCount;
+	// 	}
+	// 	return *this;
+	// }
+	
 
 	void Draw();
 
-	virtual ~Mesh();
+	//virtual ~Mesh();
 
 private:
-
-	void InitMesh(const IndexedModel& model);
 
 	enum
 	{

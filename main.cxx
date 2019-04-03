@@ -3,6 +3,7 @@
 #include "shader.h"
 #include "texture.h"
 #include "mesh.h"
+#include "model.h"
 #include "transform.h"
 #include "camera.h"
 #include <glm/glm.hpp>
@@ -22,30 +23,33 @@ int main()
 	unsigned int indices[] = { 0, 1, 2 };
 
 	Mesh mesh(vertices, sizeof(vertices)/sizeof(vertices[0]), indices, sizeof(indices)/sizeof(unsigned int));
-	Mesh mesh2("./models/monkey.obj");
+	// //Mesh mesh2("./models/monkey.obj");
+	Model model("./models/nanosuit/nanosuit.obj");
 	Shader shader("./shaders/shader");
-	Texture texture("./textures/wall.jpg");
+	Texture texture("./textures/container.jpg");
 
 	int width, height;
 	glfwGetWindowSize(display.GetWindow(), &width, &height);
-	Camera camera(glm::vec3(0, 0, -10.0f), 45.0f, (float)width/height, 0.1f, 100.0f); 
+	Camera camera(glm::vec3(0, 0, -5.0f), 45.0f, (float)width/height, 0.1f, 1000.0f, display.GetWindow()); 
 
 	Transform transform;
 
 	while (!display.IsClosed())
 	{
 		display.ProcessInput();
+		camera.ProcessInput(display.GetWindow());
 		display.Clear(0.0f, 0.15f, 0.3f, 1.0f);
 		
 		shader.Bind();
 		texture.Bind(0);
 
-		float time = glfwGetTime();
-		transform.SetRot(glm::vec3(time*50, time*50, 0));
-		transform.SetScale(glm::vec3(cos(time)+2,cos(time)+2,cos(time)+2));
+		//float time = glfwGetTime();
+		//transform.SetRot(glm::vec3(time*50, time*50, 0));
+		//transform.SetScale(glm::vec3(cos(time)+2,cos(time)+2,cos(time)+2));
 
 		shader.Update(transform, camera);
-		mesh2.Draw();
+		model.Draw();
+		mesh.Draw();
 
 		display.Update();
 	} 
