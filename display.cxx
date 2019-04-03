@@ -1,5 +1,6 @@
 #include "display.h"
 
+
 Display::Display(int width, int height, const std::string &title)
 {
 	glfwInit();
@@ -10,7 +11,7 @@ Display::Display(int width, int height, const std::string &title)
 		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	#endif
 
-	window = window = glfwCreateWindow(width, height, "LearnOpenGL", NULL, NULL);
+	window = glfwCreateWindow(width, height, "LearnOpenGL", NULL, NULL);
 
 	if (window == NULL)
 	{
