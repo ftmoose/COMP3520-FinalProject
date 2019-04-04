@@ -24,9 +24,9 @@ int main()
 
 	Mesh mesh(vertices, sizeof(vertices)/sizeof(vertices[0]), indices, sizeof(indices)/sizeof(unsigned int));
 	// //Mesh mesh2("./models/monkey.obj");
-	Model model("./models/nanosuit/nanosuit.obj");
-	Shader shader("./shaders/shader");
-	Texture texture("./textures/container.jpg");
+	Model model("../models/nanosuit/nanosuit.obj");
+	Shader shader("../shaders/shader");
+	Texture texture("../textures/container.jpg");
 
 	int width, height;
 	glfwGetWindowSize(display.GetWindow(), &width, &height);
