@@ -1,5 +1,9 @@
 #include "texture.h"
 
+
+Texture::Texture()
+{}
+
 Texture::Texture(const std::string &filePath)
 {
 	int width, height, numComponents;
@@ -26,11 +30,6 @@ Texture::Texture(const std::string &filePath)
 	glGenerateMipmap(GL_TEXTURE_2D);
 
 	stbi_image_free(imageData);
-}
-
-Texture::~Texture()
-{
-	glDeleteTextures(1, &texture); 
 }
 
 void Texture::Bind(unsigned int unit)

@@ -6,6 +6,9 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "texture.h"
+#include "shader.h"
+
 class Vertex
 {
 public:
@@ -29,39 +32,12 @@ public:
 class Mesh
 {
 public:
+	std::vector<Texture> textures;
+
 	Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices);
+	Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices, std::vector<Texture> textures);
 
-
-	// delete copy constructor/assignment operator
-	// Mesh(const Mesh &) = delete;
-  	// Mesh &operator=(const Mesh &) = delete;
-
-
-	/**
-	 * 		MOVE CONSTRUCTOR AND ASSIGNEMNT OPERATOR
-	 * */
-
-	// Mesh(Mesh &&other) : VAO(other.VAO), VBO(other.VBO), drawCount(other.drawCount)
-	// {
-	// 	other.VAO = 0;
-	// }
-
-	// Mesh &operator=(Mesh &&other)
-	// {
-	// 	if(this != &other)
-	// 	{
-	// 		VAO = other.VAO;
-	// 		other.VAO = 0;
-	// 		VBO = other.VBO;
-	// 		drawCount = other.drawCount;
-	// 	}
-	// 	return *this;
-	// }
-	
-
-	void Draw();
-
-	//virtual ~Mesh();
+	void Draw(Shader& shader);
 
 private:
 
