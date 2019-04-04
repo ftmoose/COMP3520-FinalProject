@@ -43,13 +43,11 @@ int main()
 		shader.Bind();
 		texture.Bind(0);
 
-		//float time = glfwGetTime();
-		//transform.SetRot(glm::vec3(time*50, time*50, 0));
-		//transform.SetScale(glm::vec3(cos(time)+2,cos(time)+2,cos(time)+2));
+		float time = glfwGetTime();
+		transform.SetScale(glm::vec3(cos(time)+2,cos(time)+2,cos(time)+2));
 
 		shader.Update(transform, camera);
-		model.Draw();
-		mesh.Draw();
+		model.Draw(shader);
 
 		display.Update();
 	} 
