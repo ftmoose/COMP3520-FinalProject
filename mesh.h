@@ -34,7 +34,7 @@ class Mesh
 public:
 	std::vector<Texture> textures;
 
-	Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices);
+	Mesh(Vertex *vertices, unsigned int numVertices, unsigned int *indices, unsigned int numIndices);
 	Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices, std::vector<Texture> textures);
 
 	void Draw(Shader& shader);

@@ -88,9 +88,11 @@ public:
 
 	virtual ~Camera()
 	{}
+
+	inline glm::vec3 GetPosition() { return position; }
 	
 private:
-	float speed = 0.1f;
+	float speed = 1.0f;
 	glm::mat4 projection;
 	glm::vec3 position;
 	glm::vec3 forward;
