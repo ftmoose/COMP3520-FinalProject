@@ -39,7 +39,5 @@ To setup the repo, you will need to have the following libraries installed:
 
 Once this is all put together, pull the repo and use cmake to build the `project` executable.
 
-Setup may now be straightforward on your machine (especially in a Windows environment). Because of this I've inserted a gif below demonstrating
-the final product. Or visit the following [youtube link](https://youtu.be/wA40nn_US_g) to view it in higher quality.
-
-![](Final-60-3520.gif)
+Setup may now be straightforward on your machine (especially in a Windows environment). Because of this I've uploaded a video demonstrating
+the final product.  Visit the following [youtube link](https://youtu.be/wA40nn_US_g) to view it.
