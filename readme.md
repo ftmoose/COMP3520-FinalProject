@@ -8,6 +8,8 @@ The COMP-3520 Final Project outlined within is comprised of three components;
  - An SDL2 representation of commonly used primitives in computer graphics.
  - An implementation of a Bezier surface produced using Java's Processing library in conjunction with OpenGL.
 
+** NOTE: the rest of the project readme and code is located [here](https://github.com/majid171/test) **
+
 This document will cover 
 
 ## Submission 2: 3D OpenGl (+ GLFW, GLM, Assimp) 
