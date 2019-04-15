@@ -33,6 +33,8 @@ Display::Display(int width, int height, const std::string &title)
 		glViewport(0, 0, width, height);
 	});
 
+	glCullFace(GL_BACK);
+
 	// fix mac bug
 	int x, y;
 	glfwGetWindowPos(window, &x, &y);
@@ -49,8 +51,20 @@ Display::~Display()
 void Display::Clear(float red, float green, float blue, float alpha)
 {
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
 	glClearColor(red, green, blue, alpha);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+void Display::EnableCullFace()
+{
+	glEnable(GL_CULL_FACE);
+}
+
+void Display::DisableCullFace()
+{
+	glEnable(GL_CULL_FACE);
+	glDisable(GL_CULL_FACE);
 }
 
 void Display::Update()

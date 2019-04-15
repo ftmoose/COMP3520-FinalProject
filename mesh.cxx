@@ -109,6 +109,7 @@ Mesh::Mesh(Vertex *vertices, unsigned int numVertices, unsigned int* indices, un
 
 void Mesh::Draw(Shader& shader)
 {
+	shader.Bind();
 	unsigned int diffuseNr = 1;
     unsigned int specularNr = 1;
     for(unsigned int i = 0; i < textures.size(); i++)

@@ -15,6 +15,9 @@ class Display
 		void Update();
 		bool IsClosed();
 		void ProcessInput();
+
+		void EnableCullFace();
+		void DisableCullFace();
 		
 		GLFWwindow* GetWindow() { return window; }
 
