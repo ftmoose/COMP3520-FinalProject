@@ -45,4 +45,4 @@ Once this is all put together, pull the repo and use cmake to build the `project
 Setup may now be straightforward on your machine (especially in a Windows environment). Because of this I've uploaded a video demonstrating
 the final product.  Visit the following [youtube link](https://youtu.be/wA40nn_US_g) to view it.
 
-![Demo Image](./model_image.png)
+![Demo Image](model_image.png)
